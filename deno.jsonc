@@ -1,0 +1,43 @@
+{
+  "icon": "📊",
+  "name": "@okikio/logger",
+  "version": "0.0.0",
+  "description": "Flexible, structured logging built on @logtape/logtape-—powerful, zero-dependency, and ready for any runtime.",
+  "keywords": [
+    "logging",
+    "logtape",
+    "esm"
+  ],
+  "license": "MIT",
+  "author": "okikio (Okiki Ojo)",
+  "funding": "https://github.com/sponsors/okikio",
+  "homepage": "https://github.com/okikio/logger",
+  "supported": [
+    "deno",
+    "node",
+    "bun",
+    "cloudflare-workers",
+    "browsers"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okikio/logger.git"
+  },
+  "npm": true,
+  "lock": false,
+  "exports": {
+    ".": "./mod.ts",
+    "./logtape": "./logtape.ts",
+    "./deno.jsonc": "./deno.jsonc"
+  },
+  "imports": {
+    "@logtape/logtape": "jsr:@logtape/logtape@^0.4.2",
+    "@std/testing": "jsr:@std/testing@1",
+    "@libs/testing": "jsr:@libs/testing@2"
+  },
+  "tasks": {
+    "test": "deno test --clean --trace-leaks",
+    "dev": "deno task test --filter='/^\\[deno\\]/'",
+    "test:deno-future": "DENO_FUTURE=1 && deno task test:deno"
+  }
+}
