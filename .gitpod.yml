@@ -1,0 +1,25 @@
+image:
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
+ports:
+  - port: 4321
+    onOpen: notify
+  - port: 3000
+    onOpen: notify
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
+tasks:  
+  - init: >
+      nvm install &&
+      npm install -g pnpm &&
+      pnpm install
+    command: >
+      nvm install &&
+      npm install -g pnpm &&
+      pnpm install
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - denoland.vscode-deno
